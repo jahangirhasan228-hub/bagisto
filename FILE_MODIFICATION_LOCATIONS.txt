@@ -1,0 +1,565 @@
+================================================================================
+COMPLETE FILE REFERENCE - BAGISTO 2.4 BANGLADESH CUSTOMIZATION
+================================================================================
+
+All file paths are absolute from repository root: /vercel/share/v0-project/
+
+================================================================================
+SECTION 1: LOGO & FAVICON FILES (5 TOTAL)
+================================================================================
+
+1.1 ADMIN LOGO (LIGHT MODE)
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/assets/images/logo.svg
+Type: SVG Image
+Current Content: Bagisto logo
+Replacement: Your Bangladesh platform logo (SVG format)
+Impact: Admin panel header
+Risk Level: ZERO (visual only)
+
+1.2 ADMIN LOGO (DARK MODE)
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/assets/images/dark-logo.svg
+Type: SVG Image
+Current Content: Bagisto dark theme logo
+Replacement: Dark variant of Bangladesh platform logo
+Impact: Admin panel dark mode
+Risk Level: ZERO (visual only)
+
+1.3 SHOP FRONTEND LOGO
+File: /vercel/share/v0-project/packages/Webkul/Shop/src/Resources/assets/images/logo.svg
+Type: SVG Image
+Current Content: Bagisto logo
+Replacement: Your Bangladesh platform logo
+Impact: Storefront header
+Risk Level: ZERO (visual only)
+
+1.4 INSTALLER LOGO
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Resources/assets/images/installer/bagisto-logo.svg
+Type: SVG Image
+Current Content: Bagisto logo
+Replacement: Your Bangladesh platform logo
+Impact: Installation wizard
+Risk Level: ZERO (visual only)
+
+1.5 FAVICON
+File: /vercel/share/v0-project/public/favicon.ico
+Type: ICO Image (32x32 or 64x64)
+Current Content: Bagisto favicon
+Replacement: Your Bangladesh platform favicon
+Impact: Browser tab icon, bookmarks
+Risk Level: ZERO (visual only)
+
+================================================================================
+SECTION 2: CONFIGURATION FILES (3 SEEDERS)
+================================================================================
+
+2.1 MAIN CONFIGURATION SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/Core/ConfigTableSeeder.php
+Type: PHP Seeder Class
+Current Values to Update:
+  - Store name: "Bagisto" → Your store name
+  - Store owner: "Webkul" → Your company name
+  - Copyright content: "© Webkul Software" → Your copyright
+  - Timezone: UTC → Asia/Dhaka
+  - Locale: en → bn
+  - Currency: USD → BDT
+  - Email settings, store address, phone
+Impact: Database default configuration
+Risk Level: LOW (database seeder only)
+
+2.2 CHANNEL CONFIGURATION SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/Core/ChannelTableSeeder.php
+Type: PHP Seeder Class
+Current Values to Update:
+  - Channel name: "Default Channel" → Your store name
+  - Locale: en → bn
+  - Currency: USD → BDT
+  - Logo path and other channel settings
+Impact: Default sales channel setup
+Risk Level: LOW (affects initial channel)
+
+2.3 LOCALES CONFIGURATION SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/Core/LocalesTableSeeder.php
+Type: PHP Seeder Class
+Current: Registers all 20 available languages
+Action: Verify 'bn' (Bengali) is present and set as default
+Impact: Available languages in system
+Risk Level: LOW (can add/remove later)
+
+================================================================================
+SECTION 3: LANGUAGE FILES - ADMIN (20+ FILES)
+================================================================================
+
+Directory: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/lang/
+
+Files to Update:
+  - en/app.php               (English - primary)
+  - bn/app.php               (Bengali)
+  - ar/app.php               (Arabic)
+  - ca/app.php               (Catalan)
+  - de/app.php               (German)
+  - es/app.php               (Spanish)
+  - fa/app.php               (Persian)
+  - fr/app.php               (French)
+  - he/app.php               (Hebrew)
+  - hi_IN/app.php            (Hindi)
+  - id/app.php               (Indonesian)
+  - it/app.php               (Italian)
+  - ja/app.php               (Japanese)
+  - nl/app.php               (Dutch)
+  - pl/app.php               (Polish)
+  - pt_BR/app.php            (Brazilian Portuguese)
+  - ro/app.php               (Romanian)
+  - ru/app.php               (Russian)
+  - sin/app.php              (Sinhala)
+  - tr/app.php               (Turkish)
+  - uk/app.php               (Ukrainian)
+  - zh_CN/app.php            (Chinese Simplified)
+
+Type: PHP Translation Files
+Search & Replace in each file:
+  - "Bagisto" → Your platform name
+  - "Webkul" → Your company name
+  - Any branding-specific text
+
+Impact: Admin interface text in all languages
+Risk Level: LOW (translation strings only)
+
+================================================================================
+SECTION 4: LANGUAGE FILES - SHOP (20+ FILES)
+================================================================================
+
+Directory: /vercel/share/v0-project/packages/Webkul/Shop/src/Resources/lang/
+
+Files to Update: Same as Admin section above (same language codes)
+  - en/app.php, bn/app.php, ar/app.php, etc.
+
+Type: PHP Translation Files
+Search & Replace: Same replacements as Admin files
+Impact: Customer-facing storefront text in all languages
+Risk Level: LOW (translation strings only)
+
+================================================================================
+SECTION 5: LANGUAGE FILES - INSTALLER (1 FILE PER LANGUAGE)
+================================================================================
+
+Directory: /vercel/share/v0-project/packages/Webkul/Installer/src/Resources/lang/
+
+Files to Update:
+  - en/app.php               (English)
+  - bn/app.php               (Bengali)
+  - ar/app.php               (Arabic)
+  - ca/app.php               (Catalan)
+  - [and 17 more...]
+
+Type: PHP Translation Files
+Content: Installation wizard text and welcome messages
+Search & Replace: "Bagisto" → Your platform name
+Impact: Installation wizard interface
+Risk Level: LOW (displayed during setup only)
+
+================================================================================
+SECTION 6: APPLICATION CONFIGURATION
+================================================================================
+
+6.1 DEFAULT APPLICATION LOCALE
+File: /vercel/share/v0-project/config/app.php
+Type: PHP Configuration File
+Current Value: 'locale' => 'en'
+Change To: 'locale' => 'bn'
+Impact: Default language for entire application
+Risk Level: ZERO (configuration only)
+
+6.2 DEFAULT TIMEZONE
+File: /vercel/share/v0-project/config/app.php
+Type: PHP Configuration File
+Current Value: 'timezone' => 'UTC'
+Change To: 'timezone' => 'Asia/Dhaka'
+Impact: System time and scheduled tasks
+Risk Level: ZERO (configuration only)
+
+================================================================================
+SECTION 7: DEMO PRODUCTS
+================================================================================
+
+7.1 DEMO PRODUCTS DATA FILE
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Data/demo-products.json
+Type: JSON Data File
+Current Content: ~50 clothing and electronics products with 21 language translations
+Action Options:
+  A) Remove all: Clear array to prevent any demo data loading
+  B) Replace: Substitute with Bangladesh-specific products
+  C) Keep: Leave as-is for testing, admins can manage later
+Impact: Demo products loaded during installation
+Risk Level: ZERO (demo data only)
+
+7.2 PRODUCT TABLE SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/ProductTableSeeder.php
+Type: PHP Seeder Class
+Current: Loads demo-products.json into database
+Action: If replacing demo products, update image references if needed
+Impact: Database population during fresh install
+Risk Level: LOW (depends on demo-products.json changes)
+
+================================================================================
+SECTION 8: DEMO CATEGORIES
+================================================================================
+
+8.1 CATEGORY TABLE SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/Category/CategoryTableSeeder.php
+Type: PHP Seeder Class
+Current Categories: Men, Women, Kids, Electronics, Accessories
+Current Values to Update:
+  - Category names (translated into all 21 languages)
+  - Meta titles and descriptions
+  - Category descriptions
+  - SEO slugs
+Options:
+  A) Keep structure, update with Bangladesh categories
+  B) Replace with industry-specific categories
+  C) Clear to allow admin to create categories
+Impact: Product categorization in storefront
+Risk Level: LOW (can be managed by admin)
+
+================================================================================
+SECTION 9: CMS PAGES
+================================================================================
+
+9.1 CMS PAGES SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/CMS/CMSPagesTableSeeder.php
+Type: PHP Seeder Class
+Current Pages (11 total):
+  1. About Us
+  2. Return Policy
+  3. Refund Policy
+  4. Terms & Conditions
+  5. Terms of Use
+  6. Customer Service
+  7. What's New
+  8. Payment Policy
+  9. Shipping Policy
+ 10. Privacy Policy
+ 11. Contact Us
+
+For Each Page, Update:
+  - meta_title: Page SEO title
+  - meta_description: Page SEO description
+  - content: Full page content (HTML)
+  - url_key: Page URL slug
+
+Specific Content Updates Required:
+  - About Us: Your company history and mission
+  - Return Policy: Your return terms and Bangladesh context
+  - Refund Policy: Your refund process and timelines
+  - Terms & Conditions: Bangladesh legal compliance
+  - Privacy Policy: GDPR compliance + Bangladesh regulations
+  - Payment Policy: Your accepted payment methods
+  - Shipping Policy: Your shipping zones and costs (Bangladesh-focused)
+  - Contact Us: Your actual contact information
+
+Impact: Publicly visible CMS pages on storefront
+Risk Level: LOW (content only, no code)
+
+================================================================================
+SECTION 10: EMAIL TEMPLATES
+================================================================================
+
+10.1 ADMIN EMAIL LAYOUT (MASTER TEMPLATE)
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/views/emails/layout.blade.php
+Type: Blade Template
+Current Content:
+  - Logo image reference
+  - Footer with company information
+  - Copyright text
+  - Company name
+Update With:
+  - Company copyright and name
+  - Contact information
+Impact: Wrapper template for all admin notification emails
+Risk Level: LOW (visual branding only)
+
+10.2 SHOP EMAIL LAYOUT (MASTER TEMPLATE)
+File: /vercel/share/v0-project/packages/Webkul/Shop/src/Resources/views/emails/layout.blade.php
+Type: Blade Template
+Same updates as Admin layout
+Impact: Wrapper template for customer notification emails
+Risk Level: LOW (visual branding only)
+
+10.3 INDIVIDUAL EMAIL TEMPLATES (20+ FILES)
+
+Admin Emails Directory: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/views/emails/
+
+Files to Review:
+  - orders/canceled.blade.php
+  - orders/created.blade.php
+  - orders/commented.blade.php
+  - orders/shipped.blade.php
+  - orders/invoiced.blade.php
+  - customers/forget-password.blade.php
+  - customers/welcome.blade.php
+  - customers/reset-password.blade.php
+  - [and more...]
+
+Shop Emails Directory: /vercel/share/v0-project/packages/Webkul/Shop/src/Resources/views/emails/
+
+Same files for customer communication
+
+Updates to Make:
+  - Replace sender name from "Bagisto" to your company
+  - Update signature and contact information
+  - Add Bangladesh-specific legal disclaimers if needed
+
+Impact: Email communication branding
+Risk Level: LOW (visual text only)
+
+================================================================================
+SECTION 11: THEME & CUSTOMIZATION
+================================================================================
+
+11.1 THEME CUSTOMIZATION SEEDER
+File: /vercel/share/v0-project/packages/Webkul/Installer/src/Database/Seeders/Shop/ThemeCustomizationTableSeeder.php
+Type: PHP Seeder Class
+Current Content:
+  - Hero banner configuration and text
+  - Category carousel settings
+  - Featured products section
+  - Newsletter signup section
+  - Footer link configuration
+  - Social media settings
+  - Theme color configurations
+
+Updates Required:
+  - Replace hero banner promotional text with your marketing copy
+  - Update category carousel images (if replacing categories)
+  - Update featured products to your products
+  - Add your social media links (Facebook, Instagram, etc.)
+  - Update newsletter signup messaging
+  - Configure footer with your company links
+  - Customize colors to match your brand (optional)
+
+Impact: Visual appearance and layout of storefront
+Risk Level: MEDIUM (affects visual presentation)
+
+================================================================================
+SECTION 12: LAYOUT & FOOTER FILES
+================================================================================
+
+12.1 ADMIN LAYOUT FOOTER
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/views/components/layouts/index.blade.php
+Type: Blade Template
+Current Content:
+  - Footer copyright text
+  - Company name
+  - Version information
+  - Admin links
+Update:
+  - Replace "Bagisto" with your company name
+  - Update copyright year and company name
+  - Update support/documentation links
+Impact: Admin panel footer
+Risk Level: LOW (layout text only)
+
+12.2 SHOP LAYOUT FOOTER
+File: /vercel/share/v0-project/packages/Webkul/Shop/src/Resources/views/components/layouts/index.blade.php
+Type: Blade Template
+Current Content:
+  - Footer links (About, Contact, etc.)
+  - Newsletter signup section
+  - Social media links
+  - Copyright information
+  - Company information
+Update:
+  - Footer company information
+  - Social media URLs (Facebook, Instagram, Twitter, etc.)
+  - About/Contact/Help links
+  - Copyright information
+  - Payment icons (if applicable)
+Impact: Customer-visible storefront footer
+Risk Level: LOW (layout text only)
+
+12.3 ADMIN HEADER
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Resources/views/components/layouts/header/index.blade.php
+Type: Blade Template
+Note: Logo references here will auto-update when logo file replaced
+Action: No code changes needed
+
+================================================================================
+SECTION 13: DOCUMENTATION FILES
+================================================================================
+
+13.1 MAIN README
+File: /vercel/share/v0-project/README.md
+Type: Markdown
+Current Content:
+  - Bagisto platform description
+  - Feature list
+  - Installation instructions
+  - Links to bagisto.com, demo.bagisto.com, forums.bagisto.com
+  - Webkul company information
+  - Cloud hosting references
+
+Updates Required:
+  - Replace platform description with your Bangladesh platform description
+  - Update feature list for your specific use case
+  - Replace external links to your documentation
+  - Add Bangladesh-specific features and benefits
+  - Update support/contact information
+  - Replace Bagisto logo reference with your logo URL
+
+Impact: Repository front page, GitHub visibility
+Risk Level: ZERO (documentation only)
+
+13.2 CONTRIBUTING GUIDELINES
+File: /vercel/share/v0-project/.github/CONTRIBUTING.md
+Type: Markdown
+Current Content: References to Bagisto repository and contribution process
+Updates:
+  - Replace with your contribution guidelines
+  - Update repository references
+Risk Level: ZERO (documentation only)
+
+13.3 CODE OF CONDUCT
+File: /vercel/share/v0-project/CODE_OF_CONDUCT.md
+Type: Markdown
+Current Content: Contact email support@bagisto.com
+Updates:
+  - Replace with your support email
+Risk Level: ZERO (documentation only)
+
+13.4 COPILOT INSTRUCTIONS
+File: /vercel/share/v0-project/.github/copilot-instructions.md
+Type: Markdown
+Current Content: AI development guide for Bagisto
+Updates: Optional - update if you maintain AI/ML documentation
+Risk Level: ZERO (documentation only)
+
+13.5 AGENTS DOCUMENTATION
+File: /vercel/share/v0-project/AGENTS.md
+Type: Markdown
+Current Content: Architecture guide for Bagisto 2.4.x
+Updates: Optional - can update for your platform documentation
+Risk Level: ZERO (documentation only)
+
+13.6 CLAUDE DOCUMENTATION
+File: /vercel/share/v0-project/CLAUDE.md
+Type: Markdown
+Current Content: Claude AI assistant instructions for Bagisto
+Updates: Optional - update if using AI documentation
+Risk Level: ZERO (documentation only)
+
+================================================================================
+SECTION 14: ADMIN SYSTEM CONFIGURATION (UI REFERENCE)
+================================================================================
+
+14.1 SYSTEM CONFIG FILE
+File: /vercel/share/v0-project/packages/Webkul/Admin/src/Config/system.php
+Type: PHP Configuration Class
+Purpose: Defines admin settings fields in Admin > Settings > General
+Current Configuration Fields:
+  - Store Name
+  - Store Owner
+  - Store Description
+  - Logo/Favicon Upload Paths
+  - Copyright Content (editable via admin UI)
+  - Email Configuration
+  - Store Address
+  - Phone Number
+
+Note: These can be edited via Admin UI after installation
+Default values come from ConfigTableSeeder.php
+
+Risk Level: ZERO - Configuration only, editable via admin panel
+
+================================================================================
+SECTION 15: BOOTSTRAP & INITIALIZATION (DO NOT MODIFY)
+================================================================================
+
+15.1 PROVIDERS - PROTECTED
+File: /vercel/share/v0-project/bootstrap/providers.php
+Status: ✅ DO NOT MODIFY
+Reason: Contains all Webkul package service provider registrations
+Impact: Core application initialization
+
+15.2 APPLICATION CONFIG - PARTIAL MODIFY ONLY
+File: /vercel/share/v0-project/bootstrap/app.php
+Status: ✅ Only modify app.php config values (locale, timezone)
+Reason: Contains middleware and application setup
+Changes: Only config file (config/app.php)
+
+================================================================================
+SECTION 16: PROTECTED CORE FILES (DO NOT MODIFY)
+================================================================================
+
+PROTECTED - All functionality will break if modified:
+✅ /packages/Webkul/*/src/Models/*         (Database models)
+✅ /packages/Webkul/*/src/Contracts/*      (Interfaces)
+✅ /packages/Webkul/*/src/Repositories/*   (Data access)
+✅ /packages/Webkul/*/src/Http/Controllers/* (Business logic)
+✅ /packages/Webkul/Checkout/src/*         (Shopping cart)
+✅ /packages/Webkul/Cart/src/*             (Cart system)
+✅ /packages/Webkul/Product/src/*          (Product catalog)
+✅ /packages/Webkul/Payment/src/*          (Payment gateway)
+✅ /packages/Webkul/Shipping/src/*         (Shipping methods)
+
+================================================================================
+SECTION 17: FILE MODIFICATION CHECKLIST
+================================================================================
+
+LOGO & FAVICON (5 files)
+  [ ] packages/Webkul/Admin/src/Resources/assets/images/logo.svg
+  [ ] packages/Webkul/Admin/src/Resources/assets/images/dark-logo.svg
+  [ ] packages/Webkul/Shop/src/Resources/assets/images/logo.svg
+  [ ] packages/Webkul/Installer/src/Resources/assets/images/installer/bagisto-logo.svg
+  [ ] public/favicon.ico
+
+CONFIGURATION (3 files)
+  [ ] packages/Webkul/Installer/src/Database/Seeders/Core/ConfigTableSeeder.php
+  [ ] packages/Webkul/Installer/src/Database/Seeders/Core/ChannelTableSeeder.php
+  [ ] config/app.php
+
+LANGUAGES (50+ files) - Sample
+  [ ] packages/Webkul/Admin/src/Resources/lang/en/app.php
+  [ ] packages/Webkul/Admin/src/Resources/lang/bn/app.php
+  [ ] packages/Webkul/Shop/src/Resources/lang/en/app.php
+  [ ] packages/Webkul/Shop/src/Resources/lang/bn/app.php
+  [ ] [All other language files...]
+
+DEMO CONTENT (2 files)
+  [ ] packages/Webkul/Installer/src/Data/demo-products.json
+  [ ] packages/Webkul/Installer/src/Database/Seeders/ProductTableSeeder.php
+
+CMS & CATEGORIES (2 files)
+  [ ] packages/Webkul/Installer/src/Database/Seeders/CMS/CMSPagesTableSeeder.php
+  [ ] packages/Webkul/Installer/src/Database/Seeders/Category/CategoryTableSeeder.php
+
+EMAIL TEMPLATES (22 files)
+  [ ] packages/Webkul/Admin/src/Resources/views/emails/layout.blade.php
+  [ ] packages/Webkul/Shop/src/Resources/views/emails/layout.blade.php
+  [ ] [All other email templates...]
+
+THEME & LAYOUT (3 files)
+  [ ] packages/Webkul/Installer/src/Database/Seeders/Shop/ThemeCustomizationTableSeeder.php
+  [ ] packages/Webkul/Admin/src/Resources/views/components/layouts/index.blade.php
+  [ ] packages/Webkul/Shop/src/Resources/views/components/layouts/index.blade.php
+
+DOCUMENTATION (6 files)
+  [ ] README.md
+  [ ] CONTRIBUTING.md
+  [ ] CODE_OF_CONDUCT.md
+  [ ] .github/CONTRIBUTING.md
+  [ ] AGENTS.md (optional)
+  [ ] CLAUDE.md (optional)
+
+================================================================================
+TOTAL: 70+ FILES TO MODIFY
+Time Estimate: 12-15 hours
+Risk Level: LOW-MEDIUM (mostly content changes)
+Core eCommerce Impact: ZERO (protected)
+================================================================================
+
+STATUS: ✋ AWAITING USER APPROVAL
+
+NO FILES HAVE BEEN MODIFIED
+NO CODE CHANGES HAVE BEEN MADE
+ONLY ANALYSIS AND PLANNING COMPLETED
+
+================================================================================
