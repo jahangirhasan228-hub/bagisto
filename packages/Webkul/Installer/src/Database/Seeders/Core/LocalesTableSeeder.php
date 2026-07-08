@@ -26,9 +26,9 @@ class LocalesTableSeeder extends Seeder
 
         DB::table('locales')->delete();
 
-        $defaultLocale = $parameters['default_locale'] ?? config('app.locale');
+        $defaultLocale = $parameters['default_locale'] ?? 'bn';
 
-        $locales = $parameters['allowed_locales'] ?? [$defaultLocale];
+        $locales = $parameters['allowed_locales'] ?? ['bn', 'en'];
 
         foreach ($locales as $key => $locale) {
             $logoPath = null;

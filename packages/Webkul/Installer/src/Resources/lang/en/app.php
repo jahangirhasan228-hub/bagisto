@@ -132,10 +132,10 @@ return [
 
         'core' => [
             'channels' => [
-                'meta-description' => 'Demo store meta description',
-                'meta-keywords' => 'Demo store meta keyword',
-                'meta-title' => 'Demo store',
-                'name' => 'Default',
+                'meta-description' => 'AmarShop - Bangladesh eCommerce Platform',
+                'meta-keywords' => 'AmarShop, Bangladesh, eCommerce, Shopping',
+                'meta-title' => 'AmarShop - Desh er Ponno, Shobar Jonno',
+                'name' => 'AmarShop',
             ],
 
             'currencies' => [
