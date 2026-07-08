@@ -16,6 +16,10 @@ class CMSPagesTableSeeder extends Seeder
      */
     public function run($parameters = [])
     {
+        // Skip demo CMS pages for AmarShop - Phase 2.4
+        // Users can create pages via Admin panel
+        return;
+
         DB::table('cms_pages')->delete();
 
         DB::table('cms_page_translations')->delete();

@@ -146,13 +146,12 @@ class ProductTableSeeder extends Seeder
 
         $this->seedAttributeInfrastructure();
 
-        (new CategoryTableSeeder)->sampleCategories($parameters);
-
-        (new ThemeCustomizationTableSeeder)->sampleThemeCustomizations($parameters);
-
-        $this->seedProducts($this->defaultLocale);
-
-        $this->seedProductRelations();
+        // Skip demo products and theme customizations for AmarShop - Phase 2.4
+        // Users can add products via Admin panel
+        // (new CategoryTableSeeder)->sampleCategories($parameters);
+        // (new ThemeCustomizationTableSeeder)->sampleThemeCustomizations($parameters);
+        // $this->seedProducts($this->defaultLocale);
+        // $this->seedProductRelations();
     }
 
     // =========================================================================
