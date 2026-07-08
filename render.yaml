@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: amarshop
+    env: php
+    plan: free
+    buildCommand: |
+      composer install
+      php artisan migrate --force
+      php artisan storage:link
+    startCommand: "php artisan serve --host=0.0.0.0 --port=10000"
+    envVars:
+      - key: APP_NAME
+        value: AmarShop
+      - key: APP_ENV
+        value: production
+      - key: APP_URL
+        value: https://amarshop.onrender.com
+      - key: APP_TIMEZONE
+        value: Asia/Dhaka
+      - key: APP_LOCALE
+        value: bn
+      - key: APP_CURRENCY
+        value: BDT
+      - key: APP_DEBUG
+        value: "false"
+      - key: DB_CONNECTION
+        value: sqlite
+    staticPublicPath: public
